@@ -24,7 +24,6 @@ var discord_id = 718023501306527766;
 function save() {
     let n_discord_id = document.getElementById("disc-id");
     document.cookie = `auth=${n_discord_id.value}`;
-    return false; // code that stops the page from reloading when you submit the form or something - e !
 }; // doesnt <button> just do that LMFAO
 // "here we observe the wylie in its natural habitat of networking code" - probably some guy at national geographic
 async function fetchZooJSON() {   
