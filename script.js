@@ -15,16 +15,16 @@ async function testapi() { // FIXME
   }).then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
 
   if (apitest=="Nobody here but us foxxos...") {
-      apicheck.innerText = "api test: all good!";
+      apicheck.innerText = "The API works!";
   } else {   
-      apicheck.innerText = "api test: failed :(";
+      apicheck.innerText = "The API doesn't work. Try turning on the Public Zoo option on https://robotop.xyz/settings";
   };
 };
 
 testapi();
 
 // DEVELOPER VARIABLES
-var discord_id = 718023501306527766;
+var discord_id = 539019682968240128;
 
 function save() {
     let n_discord_id = document.getElementById("disc_id");
