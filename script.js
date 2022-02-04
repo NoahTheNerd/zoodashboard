@@ -7,7 +7,12 @@ async function testapi() { // FIXME
   .then(data => console.log(data))
   .then(apitest = data); 
   my 1 line of code is obviously superior to 4 lines (not debatable) (objective)*/
-  let apitest = await fetch('https://robotop.xyz/api/').then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
+  let apitest = await fetch('https://robotop.xyz/api/', {
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  }
+  }).then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
 
   if (apitest=="Nobody here but us foxxos...") {
       apicheck.innerText = "api test: all good!";
