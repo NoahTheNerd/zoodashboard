@@ -1,13 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
-    font-family: sans-serif;
+    font-family: Roboto;
     zoom: 125%;
 }
-.main1 {
-    background-color: #ddd;
-    padding: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 10px;
-    margin: 8px;
-    width: max-content;
+
+p {
+    font-family: "Roboto";
+    font-size: 21px;
+    text-align: center;
+    line-height: 100%;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-family: "Roboto";
+    font-size: 40px;
+    text-align: center;
+    line-height: 80%;
+    margin-top: 40px;
+  }
+  
+  h2 {
+    font-family: "Roboto";
+    font-size: 170%;
+    text-align: center;
+    line-height: 80%;
+    margin-top: 40px;
+  }
+  
+  h3 {
+    font-family: "Roboto";
+    font-size: 23px;
+    text-align: center;
+    line-height: 80%;
+    margin-top: 50px;
+  }
+  
+  h4 {
+    font-family: "Roboto";
+    font-size: 18px;
+    text-align: center;
+    line-height: 80%;
+    margin-top: 5px;
+    margin-bottom: 22px;
+  }
+  
+  h5 {
+    font-family: "Roboto";
+    font-size: 50px;
+    text-align: center;
+    line-height: 0%;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  hr {
+    width: 80%;
+  }  
+
+input {
+    padding: 9px 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    max-width: 250px;
+    font-family: "Roboto";
+  }
+
+  button {
+    text-decoration: none;
+    border: 0.5px solid rgb(143, 143, 143);
+      background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    padding: 10px 30px;
+    text-align: center;
+    cursor: pointer;
+      font-family: "Roboto";
+      font-size: 17px;
+    font-weight: bold;
+    width: 150px;
+   }
+
+  .center {
+    align-items: center;
+    justify-content: center;
 }
