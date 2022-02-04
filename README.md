@@ -9,6 +9,7 @@ An easy to use website for [RoboTop](https://robotop.xyz)'s zoo feature
 
 ### ✨ Features/TODO
 If a box is ticked, the feature should be available on the current branch.
+- [ ] Basic login functionality 
 - [ ] Viewing your cooldowns
 - [ ] Viewing additional data
 - [ ] Tips & Tricks to help you
