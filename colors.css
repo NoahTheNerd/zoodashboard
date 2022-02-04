@@ -1,0 +1,41 @@
+p, h1, h2, h3, h4, h5, .button, .header li a, .tab button, 
+#modLogTable div, #modLogTable th, .varList td, .varList th, #xButton p {
+  color: #eee
+}
+
+.main1 {
+  background-color: #333;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 8px;
+  width: max-content;
+}
+
+body {
+  background-color:#222222;
+}
+
+.red {
+  color: red;
+ }
+
+.green {
+  color: #00cc00;
+ }
+
+.blue {
+  color: cyan !important;
+ }
+
+.yellow {
+  color: yellow;
+ }
+
+ input {
+  border-color: #aaaaaa;
+  background-color: #1a1a1a;
+  color: #eee;
+}
