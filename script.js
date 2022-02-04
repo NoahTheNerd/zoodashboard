@@ -8,7 +8,7 @@ async function testapi() { // FIXME
   .then(apitest = data); 
   my 1 line of code is obviously superior to 4 lines (not debatable) (objective)*/
   let apitest = await fetch('https://robotop.xyz/api/', {
-  mode: 'cors',
+  mode: 'no-cors',
   headers: {
     'Content-Type': 'application/json',
   }
