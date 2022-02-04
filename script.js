@@ -27,7 +27,7 @@ testapi();
 var discord_id = 718023501306527766;
 
 function save() {
-    let n_discord_id = document.getElementById("disc-id");
+    let n_discord_id = document.getElementById("disc_id");
     document.cookie = `auth=${n_discord_id.value}`;
 }; // doesnt <button> just do that LMFAO
 // "here we observe the wylie in its natural habitat of networking code" - probably some guy at national geographic
