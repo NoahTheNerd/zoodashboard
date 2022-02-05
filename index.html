@@ -1,21 +1,23 @@
+<! hey there! >
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <! html makes me depressed >
   </head>
 <body>
   <div style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: center;justify-content: center;align-items: center;">
    <h1>Zoo Dashboard</h1>
+   <h4 id="thequote">this message shouldn't be visible</h4>
+   <h3>Please enter your Discord ID.</h3>
    <input type="number" placeholder="Discord ID" id="disc_id";> 
    <br>
    <button onclick="save()">Load Zoo</button>
    <p id="apicheck">Testing API...</p>
-    <div class="main1">
-      <h3>Magic Developer Box</h3>
-      <p><b>Zoo Key: </b>???</p>
-    </div>
+  </div>
+  <div class="section" style="display: flex;align-items: center;justify-content: flex-start;flex-direction: column;flex-wrap: nowrap;align-content: center;">
+    <h2>Magic Developer Box</h2>
+    <p><b>Zoo Key: </b>???</p>
   </div>
     <script src="script.js"></script>
 </body>
