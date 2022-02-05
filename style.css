@@ -83,8 +83,11 @@ input {
     font-weight: bold;
     width: 150px;
    }
-
-  .center {
-    align-items: center;
-    justify-content: center;
-}
+   
+   .section {
+    padding-bottom: 25px; 
+    max-width: 75%;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
