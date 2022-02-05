@@ -1,6 +1,13 @@
 console.log("Hello World!")
 const apicheck = document.getElementById("apicheck")
 
+// Random quote generator.
+//const quotes = ["r!z", "", "March", "April", "May", "June", "July"];
+//
+//const random = Math.floor(Math.random() * quotes.length);
+//thequote.innerText = random, quotes[random];
+
+
 async function testapi() { // FIXME
     /* fetch('https://robotop.xyz/api/')
   .then(response => response.json())
@@ -33,7 +40,7 @@ function save() {
 // "here we observe the wylie in its natural habitat of networking code" - probably some guy at national geographic
 async function fetchZooJSON() {   
     // man fetch sucks, axios is nice but thats a npm :sadge:
-    let zoo = await fetch(`https://robotop.xyz/api/zoo/718023501306527766`).then(response => response.json()).catch(e => {return e});
+    let zoo = await fetch(`https://robotop.xyz/api/zoo/539019682968240128`).then(response => response.json()).catch(e => {return e});
     console.log(zoo);
 }; // setting up a cors proxy, gimme a sec.
 
