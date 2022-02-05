@@ -39,3 +39,8 @@ body {
   background-color: #1a1a1a;
   color: #eee;
 }
+
+.section {
+  background-color: #0f0f0f; 
+  border: 1.5px solid #eee
+}
