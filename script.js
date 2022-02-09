@@ -9,7 +9,7 @@ async function testapi() { // FIXME
   my 1 line of code is obviously superior to 4 lines (not debatable) (objective)*/
   let apitest = await fetch('https://robotop.xyz/api/', {
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'text/plain'
   }
   }).then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
 
