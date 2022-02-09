@@ -1,41 +1,89 @@
-console.log("Hello World!")
+// Load some local stuff
+
+var discord_id = localStorage.getItem("id") 
+var user = {
+  "id": discord_id 
+}
+
 const apicheck = document.getElementById("apicheck")
 
-async function testapi() { // FIXME
-    /* fetch('https://robotop.xyz/api/')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .then(apitest = data); 
-  my 1 line of code is obviously superior to 4 lines (not debatable) (objective)*/
-  let apitest = await fetch('https://robotop.xyz/api/zoo/718023501306527766', {
-  headers: {
-    'Content-Type': 'application/json'
-  }
-  }).then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
-console.log(apitest)
-  if (apitest=="Nobody here but us foxxos...") {
-      apicheck.innerText = "api test: all good!";
+//ye
+var dev = {
+  "id1": "309104296362901505",
+  "id2": "718023501306527766"
+}
+var db_zookey = document.getElementById("devbox-zookey")
+var db_username = document.getElementById("devbox-username")
+var db_alert = document.getElementById("devbox-alert")
+var db_user = document.getElementById("user")
+var db_main = document.getElementById("devbox-main")
+var db_timer = document.getElementById("devbox-timer")
+var db_image = document.getElementById("devbox-image")
+var db_shopcredits = document.getElementById("devbox-shopcredits")
+
+async function testapi() { 
+  let apitest = await fetch('https://robotop.xyz/api/zoo/-1', {
+  }).then(response => response.text()).catch(e => {return e}); 
+  if (apitest.startsWith("{")) {
+      apicheck.innerText = "The RoboTop API is working!";
   } else {   
-      apicheck.innerText = "api test: failed :(";
+      apicheck.innerText = "There seems to be an issue with the RoboTop API.";
   };
 };
 
-testapi();
 
-// DEVELOPER VARIABLES
-var discord_id = 718023501306527766;
 
 function save() {
-    let n_discord_id = document.getElementById("disc_id");
-    document.cookie = `auth=${n_discord_id.value}`;
-}; // doesnt <button> just do that LMFAO
-// "here we observe the wylie in its natural habitat of networking code" - probably some guy at national geographic
-async function fetchZooJSON() {   
-    // man fetch sucks, axios is nice but thats a npm :sadge:
-    let zoo = await fetch(`https://robotop.xyz/api/zoo/718023501306527766`).then(response => response.json()).catch(e => {return e});
-    console.log(zoo);
-}; // setting up a cors proxy, gimme a sec.
+    let n_discord_id = document.getElementById("disc-id");
+    localStorage.setItem('id', n_discord_id.value)
+    user.id = n_discord_id.value
+    fetchZooJSON(n_discord_id.value)
+}
 
-// lol it would be funny if i were to allow linking your discord via oauth2
-// sounds like a lot of networking
-// yeah it would be funny th- jk
+async function findRelicProp(relicname, property) {
+  let zoo = await fetch(`https://robotop.xyz/api/zoo/${user.id}`).then(response => response.json()).catch(e => {return e});
+  let eq_name = relicname
+  for (let i = 0; i < zoo.relics.length; i++) {
+    console.log(zoo.relics[i][property])
+    if (zoo.relics[i][property]) {
+      return zoo.relics[i][property]
+    }
+}
+}
+
+// SPAGHETIIIIIII CODE!!!! Sorry wylie i ruined your cool function ahahaha now its your problem
+async function fetchZooJSON(person) {   
+    let zoo = await fetch(`https://robotop.xyz/api/zoo/${person}`).then(response => response.json()).catch(e => {return e});
+    let cosmetic = findRelicProp(zoo.equippedCosmetic, "emoji")
+    if (zoo.exists==true&zoo.invalid==true) {
+      db_username.innerText = "🔒 Your zoo is private!"
+      db_alert.innerHTML = "<a href='#' onclick='window.open(`https://robotop.xyz/settings`)'>Unprivate my zoo!</a><br>"
+      console.log("User's zoo is private.")
+      twemoji.parse(document.body)
+      return;
+    }
+    if (zoo.public==true) {
+      db_main.hidden = false
+      db_image.src = zoo.user.avatar
+      db_username.innerHTML = `${cosmetic} ${zoo.user.name}`
+      db_user.hidden = false
+      if (zoo.secretInfo) {
+        db_zookey.innerHTML = "<b>Zoo Key: </b>true"
+        db_shopcredits.innerHTML = `<b>Shop Credits:</b> ${zoo.secretInfo.shopCredits}`
+        db_alert.innerHTMl = `✧ ${zoo.score} total score • ${zoo.completion}% completion • ${zoo.leaders.length}/10 leaders`
+        db_username.innerHTML = `${zoo.name}`
+        db_username.style.color = `#${zoo.color}`
+      } else {
+        db_zookey.innerHTML = "<b>Zoo Key: </b>false"
+      }
+    
+      
+    }
+   
+    twemoji.parse(document.body)
+}; 
+
+testapi();
+fetchZooJSON(user.id)
+
+twemoji.parse(document.body)

@@ -1,13 +1,74 @@
 body {
     font-family: sans-serif;
     zoom: 125%;
+    background-color: #222222;
+    color: white;
 }
+hr {
+    border: none;
+    border-top: solid 2px #555;
+}
+input {
+    padding: 9px 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    max-width: 250px;
+    font-family: "Roboto";
+    border-color: #aaaaaa;
+  background-color: #1a1a1a;
+  color: #eee;
+  }
+  button {
+      border: none;
+      color: white;
+    text-decoration: none;
+      background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    padding: 10px 30px;
+    text-align: center;
+    cursor: pointer;
+      font-family: "Roboto";
+      font-size: 17px;
+    font-weight: bold;
+    width: 150px;
+   }
+   
 .main1 {
-    background-color: #ddd;
+    background-color: #323232;
+    color: white;
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 10px;
     margin: 8px;
-    width: max-content;
+    width: 400px;
+    height: 500px;
+    border-left: 8px solid #5699ff;
 }
+a {
+    color: #5699ff;
+}
+hithere {
+    cursor: help;
+}
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+ }
+ .dontworryaboutthisone {
+     line-height: 1;
+     font-size: 25px;
+     float:center;
+ }
+ .pfp {
+     padding-top: 1px;
+     width: 64px;
+     height: 64px;
+    float:left;
+    border-radius: 69px;
+    padding-right: 10px;
+ }

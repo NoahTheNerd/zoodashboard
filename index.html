@@ -3,14 +3,26 @@
   <head>
     <title>Zoo Dashboord</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   </head>
 <body>
   <h1>Zoo Dashboard</h1>
-  <input type="number" placeholder="discord id" id="disc_id"> <button onclick="save()">save</button>
-  <p id="apicheck">api test: (in progress)</p>
-  <div class="main1">
-    <b>Magic Developer Box</b>
-    <p><b>Zoo Key: </b>???</p>
+  <input type="number" placeholder="Discord ID" id="disc-id"> <button onclick="save()" style="background-color: #5865f2">Login</button>
+
+  <p id="apicheck">Loading...</p>
+  <div class="main1" hidden id="devbox-main">
+    <img id="devbox-image" class="pfp" alt="cool image"> <h1 id="devbox-username" style="color: #ffffff" class="dontworryaboutthisone"> <hithere title="Never gonna give you up, never gonna let you down.">✨</hithere> Username</h1>
+    <label id="devbox-alert"></label>
+    <hr>
+    <div hidden id="user">
+      <p id="devbox-zookey"><b>Zoo Key: </b>???</p>
+      <h2>🪙 Shop</h2>
+      <p id="devbox-shopcredits"><b>Shop Credits: </b>API Key required!</p>
+      <p id="devbox-shoprefresh"><b>Next Shop: </b>COMING SOON</p>
+      <h2>⏰ Timers</h2>
+      <p id="devbox-timerrescue"><b>Next Rescue: </b>COMING SOON</p>
+      <p id="devbox-timerquest"><b>Quest End: </b>COMING SOON</p>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
