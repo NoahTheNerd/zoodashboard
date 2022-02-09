@@ -11,3 +11,9 @@ body {
     margin: 8px;
     width: max-content;
 }
+a {
+    color: #5699ff;
+}
+hithere {
+    cursor: help;
+}

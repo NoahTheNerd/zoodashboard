@@ -1,41 +1,77 @@
+// Load some local stuff
+
+var discord_id = localStorage.getItem("id") 
+var user = {
+  "id": discord_id 
+}
+
 console.log("Hello World!")
 const apicheck = document.getElementById("apicheck")
 
+
+
+//ye
+var dev = {
+  "id1": "309104296362901505",
+  "id2": "718023501306527766"
+}
+var db_zookey = document.getElementById("devbox-zookey")
+var db_username = document.getElementById("devbox-username")
+var db_alert = document.getElementById("devbox-alert")
+var db_user = document.getElementById("user")
 async function testapi() { // FIXME
     /* fetch('https://robotop.xyz/api/')
   .then(response => response.json())
   .then(data => console.log(data))
   .then(apitest = data); 
-  my 1 line of code is obviously superior to 4 lines (not debatable) (objective)*/
-
-  let apitest = await fetch('https://robotop.xyz/api/').then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
-
-
-  let apitest = axios.get('https://robotop.xyz/api/zoo/718023501306527766').then(response => response.text()).catch(e => {return e}); // my one line of fetch code worked making fetch superior to everything - e !
-console.log(apitest)
-  if (apitest=="Nobody here but us foxxos...") {
-      apicheck.innerText = "api test: all good!";
+  */
+  let apitest = await fetch('https://robotop.xyz/api/zoo/-1').then(e => e.text()).catch(e => {return e});
+  if (apitest.startsWith('{')) {
+      apicheck.innerText = "API is working as intended.";
   } else {   
-      apicheck.innerText = "api test: failed :(";
+      apicheck.innerHTML = "The RoboTop API is having some issues.<br>There may be trouble viewing your zoo.";
   };
 };
 
-testapi();
 
-// DEVELOPER VARIABLES
-var discord_id = 718023501306527766;
+
+
 
 function save() {
     let n_discord_id = document.getElementById("disc-id");
-    document.cookie = `auth=${n_discord_id.value}`;
-}; // doesnt <button> just do that LMFAO
-// "here we observe the wylie in its natural habitat of networking code" - probably some guy at national geographic
-async function fetchZooJSON() {   
-    // man fetch sucks, axios is nice but thats a npm :sadge:
-    let zoo = await fetch(`https://robotop.xyz/api/zoo/718023501306527766`).then(response => response.json()).catch(e => {return e});
-    console.log(zoo);
-}; // setting up a cors proxy, gimme a sec.
+    localStorage.setItem('id', n_discord_id.value)
+    user.id = n_discord_id.value
+    fetchZooJSON(n_discord_id.value)
+}
 
-// lol it would be funny if i were to allow linking your discord via oauth2
-// sounds like a lot of networking
-// yeah it would be funny th- jk
+async function findCosmetic() {
+  let zoo = await fetch(`https://robotop.xyz/api/zoo/${user.id}`).then(response => response.json()).catch(e => {return e});
+  let eq_name = zoo.equippedCosmetic
+  return zoo
+}
+
+// SPAGHETIIIIIII CODE!!!! Sorry wylie i ruined your cool function ahahaha now its your problem
+async function fetchZooJSON(person) {   
+    let zoo = await fetch(`https://robotop.xyz/api/zoo/${person}`).then(response => response.json()).catch(e => {return e});
+    if (zoo.exists==true&zoo.invalid==true) {
+      db_username.innerText = "🔒 Your zoo is private!"
+      db_alert.innerHTML = "<a href='#' onclick='window.open(`https://robotop.xyz/settings`)'>Unprivate my zoo!</a><br>"
+      console.log("User's zoo is private.")
+      return;
+    }
+    db_username.innerHTML = ` ${zoo.user.name}`
+    db_user.hidden = false
+    if (zoo.secretInfo) {
+      db_zookey.innerHTML = "<b>Zoo Key: </b>true"
+      db_username.innerHTML = ` ${zoo.user.name}`
+      db_username.style.color = `#${zoo.secretInfo.color}`
+    } else {
+      db_zookey.innerHTML = "<b>Zoo Key: </b>false"
+    }
+    
+    
+}; 
+
+
+testapi();
+fetchZooJSON(user.id)

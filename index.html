@@ -6,11 +6,16 @@
   </head>
 <body>
   <h1>Zoo Dashboard</h1>
-  <input type="number" placeholder="discord id" id="disc_id"> <button onclick="save()">save</button>
-  <p id="apicheck">api test: (in progress)</p>
+  <input type="number" placeholder="discord id" id="disc-id"> <button onclick="save()">save</button>
+
+  <p id="apicheck">Loading...</p>
   <div class="main1">
-    <b>Magic Developer Box</b>
-    <p><b>Zoo Key: </b>???</p>
+    <h3 id="devbox-username" style="color: #000000"><hithere title="Never gonna give you up, never gonna let you down.">✨</hithere> Username</h3>
+    <label id="devbox-alert"></label>
+    <div hidden id="user">
+      <p id="devbox-zookey"><b>Zoo Key: </b>???</p>
+      
+    </div>
   </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
