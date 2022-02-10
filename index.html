@@ -1,24 +1,46 @@
-<! hey there! >
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="colors.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Zoo Dashboord</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <meta property="og:title" content="Zoo Dashboard!">
+    <meta property="og:description" content="A Zoo Dashboard that doesn't suck.">
+    <meta property="og:type" content="website">
+    <meta name="og:image" itemprop="image" content="https://cdn.discordapp.com/icons/912632200942456903/8c4f5dd58c3ed5b9278cfb7054cfc38d.png?size=2048">
+    <meta name="theme-color" content="#00ff33">
+    <meta name="twitter:card" content="summary">
   </head>
 <body>
   <div style="display: flex;flex-direction: column;flex-wrap: nowrap;align-content: center;justify-content: center;align-items: center;">
-   <h1>Zoo Dashboard</h1>
-   <h4 id="thequote">this message shouldn't be visible. if it is contact the developers</h4>
-   <h3>Please enter your Discord ID.</h3>
-   <input type="number" placeholder="Discord ID" id="disc_id";> 
+    <br>
+   <img height="100" src="https://media.discordapp.net/attachments/572754137574539284/941111726181589062/zoo_dashboard.png?width=1440&height=260">
    <br>
-   <button onclick="save()">Load Zoo</button>
-   <p id="apicheck">Testing API...</p>
+   <div style="display: flex;align-content: center;flex-wrap: wrap;flex-direction: row;align-items: center;">
+     <h3>Enter your Discord ID to login.</h3> <span class="hoverHint" title="To get your Discord ID. Go to Discord > Settings > Advanced tab > Enable Developer Mode. > User Profile Tab > Click on the 3 Dots and then click on copy ID. And now you can paste your id in the box below.">(?)</span>
+   </div>
+     <input type="number" placeholder="Discord ID" id="disc-id">
+   <br>
+    <button onclick="save()" style="background-color: #5865f2">Login</button>
+
+    <p id="apicheck">Loading...</p>
   </div>
-  <div class="section" style="display: flex;align-items: center;justify-content: flex-start;flex-direction: column;flex-wrap: nowrap;align-content: center;">
-    <h2>Magic Developer Box</h2>
-    <p><b>Zoo Key: </b>???</p>
+  <div style="display: flex;flex-direction: column;flex-wrap: wrap;align-content: center;justify-content: flex-start;align-items: center;">
+    <div class="main1" hidden id="devbox-main" style="display: flex;flex-direction: column;flex-wrap: wrap;align-content: flex-start;justify-content: flex-start;align-items: flex-start;">
+      <img id="devbox-image" class="pfp" alt="cool image"> <h1 id="devbox-username" style="color: #ffffff" class="dontworryaboutthisone"> <hithere title="Never gonna give you up, never gonna let you down.">✨</hithere> Username</h1>
+      <label id="devbox-alert"></label>
+      <hr>
+      <div hidden id="user">
+       <p id="devbox-zookey"><b>Zoo Key: </b>???</p>
+       <h2>🪙 Shop</h2>
+       <p id="devbox-shopcredits"><b>Shop Credits: </b>API Key required!</p>
+       <p id="devbox-shoprefresh"><b>Next Shop: </b>COMING SOON</p>
+        <h2>⏰ Timers</h2>
+       <p id="devbox-timerrescue"><b>Next Rescue: </b>COMING SOON</p>
+       <p id="devbox-timerquest"><b>Quest End: </b>COMING SOON</p>
+     </div>
+    </div>
   </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

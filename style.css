@@ -1,65 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font-family: Roboto;
+    font-family: "Roboto";
     zoom: 125%;
+    background-color: #222222;
+    color: white;
 }
-
-p {
-    font-family: "Roboto";
-    font-size: 21px;
-    text-align: center;
-    line-height: 100%;
-    margin-bottom: 20px;
-  }
-  
-  h1 {
-    font-family: "Roboto";
-    font-size: 40px;
-    text-align: center;
-    line-height: 80%;
-    margin-top: 40px;
-  }
-  
-  h2 {
-    font-family: "Roboto";
-    font-size: 170%;
-    text-align: center;
-    line-height: 80%;
-    margin-top: 40px;
-  }
-  
-  h3 {
-    font-family: "Roboto";
-    font-size: 23px;
-    text-align: center;
-    line-height: 80%;
-    margin-top: 50px;
-  }
-  
-  h4 {
-    font-family: "Roboto";
-    font-size: 18px;
-    text-align: center;
-    line-height: 80%;
-    margin-top: 5px;
-    margin-bottom: 22px;
-  }
-  
-  h5 {
-    font-family: "Roboto";
-    font-size: 50px;
-    text-align: center;
-    line-height: 0%;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    font-weight: bold;
-  }
-  
-  hr {
-    width: 80%;
-  }  
-
+hr {
+    border: none;
+    border-top: solid 2px #555;
+}
 input {
     padding: 9px 10px;
     font-size: 16px;
@@ -68,13 +18,16 @@ input {
     border-radius: 5px;
     max-width: 250px;
     font-family: "Roboto";
+    border-color: #aaaaaa;
+  background-color: #1a1a1a;
+  color: #eee;
   }
-
   button {
+      border: none;
+      color: white;
     text-decoration: none;
-    border: 0.5px solid rgb(143, 143, 143);
       background-color: rgba(0, 0, 0, 0);
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 10px 30px;
     text-align: center;
     cursor: pointer;
@@ -84,10 +37,40 @@ input {
     width: 150px;
    }
    
-   .section {
-    padding-bottom: 25px; 
-    max-width: 75%;
-    margin: auto;
-    margin-top: 15px;
+.main1 {
+    background-color: #323232;
+    color: white;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
     border-radius: 10px;
+    margin: 8px;
+    border-left: 8px solid #5699ff;
+}
+a {
+    color: #5699ff;
+}
+hithere {
+    cursor: help;
+}
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+ }
+ .dontworryaboutthisone {
+     line-height: 1;
+     font-size: 25px;
+     float:center;
+ }
+ .pfp {
+        border-radius: 50%;
+        height: 75px;
+ }
+
+ .hoverHint {
+    font-size: 12px;
+    vertical-align: middle;
+    cursor: help;
   }
