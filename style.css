@@ -4,6 +4,10 @@ body {
     background-color: #222222;
     color: white;
 }
+.center {
+    align-items: center;
+    justify-content: center;
+}
 hr {
     border: none;
     border-top: solid 2px #555;
@@ -72,3 +76,6 @@ img.emoji {
     border-radius: 69px;
     padding-right: 10px;
  }
+div {
+    display: block
+}
