@@ -11,6 +11,6 @@ If you want to discuss things, feel free to hop into our [Discord Server](https:
 ### ✨ Features/TODO
 If a box is ticked, the feature should be available on the current branch.
 - [x] Basic login functionality 
-- [ ] Viewing your cooldowns
+- [x] Viewing your cooldowns
 - [ ] Viewing additional data
 - [ ] Tips & Tricks to help you
